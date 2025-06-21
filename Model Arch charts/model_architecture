@@ -1,0 +1,39 @@
+// Model Architecture
+digraph {
+	rankdir=TB
+	node [shape=rectangle style=rounded]
+	A [label="Raw Data
+(desk.csv & cleaned_file.csv)"]
+	B [label="Data Preprocessing
+- Clean Data
+- Handle Missing Values
+- Feature Engineering"]
+	C [label="Feature Selection
+- Random Forest Importance
+- Correlation Analysis"]
+	D [label="SMOTE
+Balance Dataset"]
+	E [label="Train-Test Split
+(80-20)"]
+	F1 [label="Model Training
+ExtraTreesClassifier"]
+	F2 [label="Other Models
+(Random Forest, SVM, etc.)"]
+	G [label="Model Evaluation
+- Accuracy
+- Precision
+- Recall
+- F1 Score"]
+	H [label="Best Model
+ExtraTreesClassifier
+(96.22% Accuracy)"]
+	A -> B
+	B -> C
+	C -> D
+	D -> E
+	E -> F1
+	E -> F2
+	F1 -> G
+	F2 -> G
+	G -> H
+}
